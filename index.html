@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/output.css">
+    <title>Document</title>
+</head>
+<body class="">
+    
+<section class="relative flex items-center justify-center mt-40 px-3">
+    <div class="flex flex-col md:flex-row items-center justify-between pr-10 pl-20">
+
+        <div class="transition-all duration-700 player0 bg-red-100 p-10 px-30" id="player0">
+            <p class="text-3xl font-semibold uppercase">player 1</p>
+            <p class="text-4xl pl-10 score" id="score--0">0</p>
+
+            <div class="bg-red-700 p-8 text-white rounded-2xl mt-30">
+                <p class="text-xl uppercase">current</p>
+                <p class="text-xl pl-10 " id="current--0">0</p>
+            </div>
+        </div>
+
+        <div class="transition-all duration-700  player1 bg-red-500 bg-red-100 p-10 px-30 blur-[1px]" id="player1">
+            <p class="text-3xl font-semibold uppercase">player 2</p>
+            <p class="text-4xl pl-10 score " id="score--1">0</p>
+
+            <div class="bg-red-700 p-8 text-white rounded-2xl mt-30">
+                <p class="text-xl uppercase">current</p>
+                <p class="text-xl pl-10 " id="current--1">0</p>
+            </div>
+        </div>
+    </div>
+
+   <img src="image/dice5.png" alt="baton" class="absolute bottom-[90%] mt-10 left-[50%] md:top-[10%] md:left-[46%] mb-20 dice hidden">
+
+    <button class="absolute md:top-4 md:left-[46%]  left-1 top-20 bg-yellow-50 text-red-600 text-xl px-5 py-2 rounded-full cursor-pointer btn-start">Start game</button>
+    <button class="absolute md:bottom-20 md:left-[46%] left-1 bottom-[30%]  bg-yellow-100 text-red-600 text-xl px-5 py-3 rounded-full cursor-pointer btn-roll">Roll dice</button>
+    <button class="absolute md:bottom-5 md:left-[47%]  left-1 top bg-yellow-100 text-red-600 text-xl px-5 py-3 rounded-full cursor-pointer btn-hold">Hold</button>
+</section>
+
+
+
+
+
+    <script src="index.js"></script>
+</body>
+</html>
