@@ -11,9 +11,6 @@ const current2 = document.getElementById('current--1');
 const player1 = document.getElementById('player0');
 const player2 = document.getElementById('player1');
 
-
-
-
 let activePlayer = 0;
 let playing=true;
 const score =[0,0];
@@ -28,8 +25,6 @@ function switchPlayer(){
   player1.classList.toggle('blur-[1px]');
   player2.classList.toggle('blur-[1px]');
 
-
-
    currentScore = 0;
 }
 btnRoll.addEventListener('click', function(){
@@ -41,14 +36,9 @@ console.log(dice);
   diceImage.classList.remove('hidden');
   diceImage.src=`image/dice${dice}.png`;
 
- 
-
   if(dice!=1){
   currentScore+=dice;
-  document.getElementById(`current--${activePlayer}`).textContent=currentScore;
-
-
-    
+  document.getElementById(`current--${activePlayer}`).textContent=currentScore; 
   }
   else{
    //switch player
@@ -80,7 +70,6 @@ if(playing){
 }
 });
 
-
 btnStart.addEventListener('click',function(){
   activePlayer = 0;
   playing = true;
@@ -88,23 +77,18 @@ btnStart.addEventListener('click',function(){
   score[1] = 0;
   currentScore = 0;
 
-
   score1.textContent = 0;
   score2.textContent = 0;
   current1.textContent = 0;
   current2.textContent = 0;
 
-
   diceImage.classList.add('hidden');
-
 
   const winText1 = document.querySelector('#player0 div.text-3xl');
   const winText2 = document.querySelector('#player1 div.text-3xl');
   if (winText1) winText1.remove();
   if (winText2) winText2.remove();
 
-
-  
   player1.classList.remove('bg-red-500');
   player2.classList.add('bg-red-500');
   player1.classList.remove('blur-[1px]');
