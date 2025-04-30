@@ -10,9 +10,12 @@ const current1 = document.getElementById('current--0');
 const current2 = document.getElementById('current--1');
 const player1 = document.getElementById('player0');
 const player2 = document.getElementById('player1');
+const winner0 = document.getElementById('winner-0');
+const winner1 = document.getElementById('winner-1');
 
 let activePlayer = 0;
 let playing=true;
+const hist=[0,0];
 const score =[0,0];
 let currentScore=0;
 
@@ -55,20 +58,27 @@ if(playing){
   document.getElementById(`score--${activePlayer}`).textContent=score[activePlayer];
  
 
-  if(score[activePlayer]>=40){
-    const newDiv = document.createElement('div');
-    newDiv.className = 'text-3xl font-bold text-yellow-800 text-center rounded-lg ';
-    newDiv.textContent = 'WINNER 🎉';
+  if(score[activePlayer]>=50){
+ 
     playing=false;
-    diceImage.classList.add('hidden');
-    document.getElementById(`player${activePlayer}`).appendChild(newDiv);
+    diceImage.classList.remove('hidden');
+    document.getElementById(`player${activePlayer}`).style.background='#00FF00';
+    document.getElementById(`winner-${activePlayer}`).innerHTML='🎉🎉 WINNER 🎉🎉';
   
+
+
+    
   }
   else{
     switchPlayer();
   }
 }
+  
+
 });
+
+
+
 
 btnStart.addEventListener('click',function(){
   activePlayer = 0;
@@ -84,15 +94,19 @@ btnStart.addEventListener('click',function(){
 
   diceImage.classList.add('hidden');
 
-  const winText1 = document.querySelector('#player0 div.text-3xl');
-  const winText2 = document.querySelector('#player1 div.text-3xl');
-  if (winText1) winText1.remove();
-  if (winText2) winText2.remove();
+  document.getElementById(`player0`).style.background='';
+  document.getElementById(`player1`).style.background='';
 
   player1.classList.remove('bg-red-500');
   player2.classList.add('bg-red-500');
   player1.classList.remove('blur-[1px]');
   player2.classList.add('blur-[1px]');
+
+  winner0.innerHTML='';
+  winner1.innerHTML='';
+
+
  
 
 });
+
